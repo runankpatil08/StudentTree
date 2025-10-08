@@ -18,7 +18,7 @@ function App() {
         <Header />
 
         {/* Main Content Area */}
-        <div className="flex-grow-1">
+        <div className="flex-grow-1 main">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

@@ -5,13 +5,13 @@ import { NavLink } from 'react-router'
 function DisplayStudent() {
   const [student,setStudent]=useState([])
   async function fetchData(){
-    const res=await axios.get('http://localhost:8000/student')
+    const res=await axios.get('https://ca500b916d93d560ff72.free.beeceptor.com/api/users/')
     console.log('res-->',res.data)
     setStudent(res.data)
   }
   useEffect( ()=>{fetchData()} , [] )
   async function deleteData(id) {
-    const res=await axios.delete(`http://localhost:8000/student/${id}/`)
+    const res=await axios.delete(`https://ca500b916d93d560ff72.free.beeceptor.com/api/users/${id}/`)
     alert('deleted...')
     await fetchData()
     
@@ -31,8 +31,8 @@ function DisplayStudent() {
         <tbody>
           {
             student.map(e=> <tr>
-                              <td>{e.name}</td>
                               <td>{e.roll}</td>
+                              <td>{e.name}</td>
                               <td>{e.marks}</td>
                               <td>
                                <NavLink to={`/update/${e.id}`} className='btn btn-warning btn-sm me-2'>update</NavLink>

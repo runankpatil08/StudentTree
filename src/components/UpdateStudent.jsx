@@ -10,7 +10,7 @@ function UpdateStudent() {
   const nav=useNavigate()
 
   async function fetchData(){
-    const res=await axios.get(`http://localhost:8000/student/${params.id}/`)
+    const res=await axios.get(`https://ca500b916d93d560ff72.free.beeceptor.com/api/users/${params.id}/`)
     setValue('roll', res.data.roll)
     setValue('name', res.data.name)
     setValue('marks', res.data.marks)
@@ -20,7 +20,7 @@ function UpdateStudent() {
 
 
   async function updateData(data){
-    const res =await axios.put(`http://localhost:8000/student/${params.id}/`, data)
+    const res =await axios.put(`https://ca500b916d93d560ff72.free.beeceptor.com/api/users/${params.id}/`, data)
     nav('/display')
   }
 
